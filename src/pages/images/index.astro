@@ -4,6 +4,7 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import { Image } from "astro:assets";
 
 import post05Img from "@images/post-05.png";
+import { Picture } from "astro:assets";
 ---
 
 <MainLayout>
@@ -16,7 +17,23 @@ import post05Img from "@images/post-05.png";
     height="250"
   />
 
-  <Image src={post05Img} width="250" height="250" alt="Imagen del post" />
+  <Image
+    src={post05Img}
+    width="250"
+    height="250"
+    alt="Imagen del post"
+    quality="high"
+    format="avif"
+  />
+
+  <Picture
+    src={post05Img}
+    width="250"
+    height="250"
+    alt="Imagen del post"
+    quality="high"
+    formats={["webp", "avif", "jpeg"]}
+  />
 
   <div
     style={{
