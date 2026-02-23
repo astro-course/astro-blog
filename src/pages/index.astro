@@ -5,7 +5,10 @@ import MainLayout from "../layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 import BlogPost from "src/components/BlogPost.astro";
 
-const blogPosts = await getCollection("blog");
+const blogPosts = await getCollection(
+  "blog",
+  (post) => post.data.isDraft === false,
+);
 ---
 
 <MainLayout title="Sergio's Blog">
